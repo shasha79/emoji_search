@@ -193,8 +193,9 @@ def _get_result_props(name, embeddings):
     return props
 
 
-def search(query, top_n=10):
-    embeddings = load_embeddings()
+def search(query, top_n=10, embeddings=None):
+    if not embeddings:
+        embeddings = load_embeddings()
 
     raw_query = query.lower()
 
